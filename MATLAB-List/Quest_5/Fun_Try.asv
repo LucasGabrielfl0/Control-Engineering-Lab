@@ -1,0 +1,5 @@
+function [Ntry,dTry] = Fun_Try(Ng,Dg,Nk,Dk)
+    Gs=tf(,)]
+    Ks=tf(Nk,Dk);
+    [Ntry,try] = tfdata(sys);
+end
