@@ -1,5 +1,4 @@
 %% DC Motor Transfer Function
-% Note: Grey bo
 % clc
 s=tf('s');
 
