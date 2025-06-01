@@ -18,12 +18,14 @@ K_array=   [1.406       1.406        1.344       1.125      969e-3      ...
 Phase_array= [180       176          157         144        140         ...
               128       123          120         113        112         97    ];
 
-%Gain in db (for the bode plot)
+
+% Gain in db (for the bode plot)
 Kdb_array=20*log10(K_array);
 
 
-% Experimental Bode Plot:
+%% Experimental Bode Plot:
 hold on
+
 % Kdb  -----------------------------------------
 subplot(2,1, 1)
 semilogx(Freq_Hz,Kdb_array)
@@ -101,4 +103,4 @@ semilogx(Freq_Hz,Phase_array,'o', Freq_Hz_Model, phase_model)
 grid on
 ylabel('Phase (degree)')
 xlabel('Frequency [Hz]')
-legend('Experimental data','Models data',Location='southwest')
+legend('Experimental Response','Models Response',Location='southwest')
