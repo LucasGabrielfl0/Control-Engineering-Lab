@@ -26,40 +26,43 @@ Kdb_array=20*log10(K_array);
 %% Experimental Bode Plot:
 hold on
 
-% Kdb  -----------------------------------------
-subplot(2,1, 1)
-semilogx(Freq_Hz,Kdb_array)
+% Kdb Subplot -----------------------------------------
+subplot(2,1, 1)                 % 2 lines, 1 collum, position 1
+semilogx(Freq_Hz,Kdb_array)     % Plot in Log Scale
 
 title('Bode Diagram')
 ylabel('Gain [db]')
 grid on
 
-% Phase ---------------------------------------
-subplot(2,1, 2)
+% Phase Subplot ---------------------------------------
+subplot(2,1, 2)                 % 2 lines, 1 collum, position 2
 semilogx(Freq_Hz,Phase_array)
+
 grid on
 ylabel('Phase (degree)')
 xlabel('Frequency [Hz]')
 
 
+%% Model's Bode plot
 
-%% Model Bode plot
 % Model's Transfer Function
-t=0.1436;  % Time constant
-K=1.406;    % Static Gain
-Gp=-K/(t*s+1);
+t  = 0.1436;        % Time constant [sec]
+K  = 1.406;         % Static Gain   [adm]
+Gp =-K/(t*s+1);     % Analytical Model of the plant
 
-%Frequency Range
-start_w=(5e-3)/(2*pi);
-end_w=95;
-W_bode=linspace(start_w, end_w, 10000);
+% Frequency Range
+start_w = (5e-3)/(2*pi);                    % Plot's Start W
+end_w   = 95;                               % Plot's End W
+W_bode=linspace(start_w, end_w, 10000);     % W points for the Bode to plot
+
 % Model's BODE plot
-[mag_bode, phase_bode, wout]=bode(Gp, W_bode);
+[mag_bode, phase_bode, wout] =   bode(Gp, W_bode);
 
-mag_model=mag_bode(:,1:end);        % Gain in db
-phase_model=phase_bode(:,1:end);    % Phase in Degrees
-Freq_Hz_Model=wout/(2*pi);          % Frequency in Hz
-Kdb_model=20*log10(mag_model);
+mag_model       = mag_bode(:,1:end);        % Gain [not in db]
+phase_model     = phase_bode(:,1:end);      % Phase in Degrees
+Freq_Hz_Model   = wout/(2*pi);              % Frequency in Hz
+
+Kdb_model=20*log10(mag_model);              % Gain in db
 
 % MODEL'S Bode: =============================
 hold on
@@ -82,11 +85,11 @@ xlabel('Frequency [Hz]')
 
 
 %% COMPARE BODE
-close all
-
 % Compare EXPERIMENTAL Bode and MODEL'S Bode: =============================
+close all
 hold on
-% Kdb ---------------------------------------
+
+% Kdb Subplot ---------------------------------------
 subplot(2,1, 1)
 semilogx(Freq_Hz,Kdb_array,'o', Freq_Hz_Model, Kdb_model)  % Model's Bode (Gain)
 
@@ -96,7 +99,7 @@ ylabel('Kdb')
 legend('Experimental data','Models data', Location='southwest')
 
 
-% Phase ---------------------------------------
+% Phase Subplot---------------------------------------
 subplot(2,1, 2)
 semilogx(Freq_Hz,Phase_array,'o', Freq_Hz_Model, phase_model)
 
