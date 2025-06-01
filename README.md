@@ -4,8 +4,9 @@ Repository for my Control Engineering Laboratory class projects at UFPE
 - All the simulink files were made in simulink 2023b (but you could run it in some earlier versions)
 - The experimental data collected in the lab was imported as a  .mat or .csv
 
-## Project 1: Aeropendulum Model
-
+## Project 1: Linearization
+Linear and non linear aproximations of a Aeropendulum
+[IMAGE AEROPENDULUM]
 
 ## Project 2: White Box Model
 Calculate the transfer function of a known circuit 
