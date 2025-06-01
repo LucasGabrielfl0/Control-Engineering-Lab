@@ -8,7 +8,7 @@ s=tf('s');
 t = 0.165;     % Time constant [sec]
 K = -1.406;    % Static Gain   [adm]
 
-% Physical Circuit Values:
+% Physical Circuit Estimated Values:
 C1 = 330e-9;  % [F]
 R2 = t/C1;    % [Ohm]
 R1 = -R2/K;   % [Ohm]
