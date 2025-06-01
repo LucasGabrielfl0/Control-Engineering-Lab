@@ -1,28 +1,26 @@
 %% White Box model of Tf2 and Tf3
 clc
 clear
-
 s=tf('s');
 
 %% Tf2 White Box model
 % Circuit Parameters
-C3=120e-9;
-C4=33e-9;
+C3 = 120e-9;
+C4 = 33e-9;
 
-R7=120e3;
-R8=47e3;
-R11=47e3;
+R7  = 120e3;
+R8  = 47e3;
+R11 = 47e3;
 
 % White Box Model:
-Zc3= 1/(C3*s);
-Zc4= 1/(C4*s);
+Zc3 = 1/(C3*s);
+Zc4 = 1/(C4*s);
 
-Z1=R8*(Zc3+R7)/(R8+Zc3+R7);
-Z2=Zc4*R11/(Zc4+R11);
+Z1 = R8*(Zc3+R7)/(R8+Zc3+R7);
+Z2 = Zc4*R11/(Zc4+R11);
 
-
+% Final Transfer Function for TF2
 Tf2= -Z2/Z1;
-% zpk(Tf2)
 
 % Delete useless variables
 clear Z1 Z2 Zc3 Zc4
@@ -32,10 +30,12 @@ clear Z1 Z2 Zc3 Zc4
 R13= 1e6;
 R14= 1e6;
 
+% Final Transfer Function for TF3
 Tf3= -R13/R14;
 
-% Tf2 and Tf3 Series
+% Tf2 and Tf3, connect in series
 Tf_23=Tf2*Tf3;
+
 step(Tf_23)
 
 %% Experimental Data:
