@@ -8,8 +8,10 @@ Repository for my Control Engineering Laboratory class projects at UFPE
 1. Linear and non linear aproximations of a Aeropendulum
 2. Measure the step and frequency response of the Lab Kit 1 and estiamte the transfer function 
 
-## Project 2: White Box Model
-Estimate the transfer function of 2 circuit using either a white box or grey box approach
+## Project 2: Analytical Models
+1. Estimate the transfer function of the Kit 1 circuit with White box aproach
+2. Estimate the transfer function of the Kit 2 circuit with Grey box aproach
+3. Using MATLAB/Simulink files, compare the estimated transfer function and the simulated system's response
 
 ## Project 3: System Identification
 Acquire and Simulate the transfer function of a unknown circuit 
