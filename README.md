@@ -5,14 +5,13 @@ Repository for my Control Engineering Laboratory class projects at UFPE
 - The experimental data collected in the lab was imported as a  .mat or .csv
 
 ## Project 1: Linearization
-Linear and non linear aproximations of a Aeropendulum
-[IMAGE AEROPENDULUM]
+1. Linear and non linear aproximations of a Aeropendulum
+2. Measure the step and frequency response of the Lab Kit 1 and estiamte the transfer function 
 
 ## Project 2: White Box Model
-Calculate the transfer function of a known circuit 
+Estimate the transfer function of 2 circuit using either a white box or grey box approach
 
-
-## Project 3: Black Box Model
+## Project 3: System Identification
 Acquire and Simulate the transfer function of a unknown circuit 
 
 ## Project 4: Ziegler-Nichols Method
